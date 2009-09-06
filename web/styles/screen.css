@@ -1,0 +1,40 @@
+html { font-family: arial, sans-serif; }
+
+
+
+#container 
+  { margin: 0; padding: 0; }
+#header 
+  { border-color: #000; border-style: solid; border-width: 0 0 1px 0; height: 20px; }
+
+ul#menu    { list-style-type: none; margin: 0; padding: 0;  }
+ul#menu li { display: inline; float: left; margin: 0 10px 0 0; padding: 0 10px 0 0; }
+ul#menu li.a { color: #000; text-decoration: none; }
+ul#menu li.a:hover, 
+ul#menu li.a:visited { color: #CCC; text-decoration: underline; }
+
+ul#menu li#title,
+ul#menu li#memo { float: right; }
+
+ul#menu li#memo { font-size: 8pt; vertical-align: bottom; }
+
+
+#footer 
+  { text-align: center; padding: 5px 0;
+    border-color: #000; border-style: solid; border-width: 1px 0 0 0; }
+#footer a { color: #999; font-size: 10pt; text-decoration: none; }
+#footer a:hover { color: #000; font-size: 10pt; text-decoration: underline; }
+
+.content-block
+  { border: #CCC solid 1px; background-color: #EEE; margin: 5px; padding: 5px; }
+.block
+  { border: #CCC solid 1px; background-color: #EEE; margin: 5px; padding: 5px; }
+.code-block
+  { border: #CCC solid 1px; background-color: #FFF; margin: 5px; padding: 5px; }
+
+.date-submit { color: #333; font-size: 8pt; }
+a.simple-link       { color: #333; font-size: 8pt; margin: 0 5px; }
+a.simple-link:hover { color: #333; font-size: 8pt; }
+
+.element-style { font-size: 9pt; border-width: 1px; }
+.element-submit { font-size: 9pt; text-align: center; }
