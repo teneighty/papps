@@ -16,11 +16,11 @@ That should do it.
 Usage
 ================
 
-`papps`
+    papps
 
 or
 
-`papps --help`
+    papps --help
 
 
 
