@@ -7,10 +7,8 @@ highlighting-kate amongst other things.
 
 Build
 ================
-~~~~~~~~~~~~~~~~~~
-cd Papps
-cabal install
-~~~~~~~~~~~~~~~~~~
+    cd Papps
+    cabal install
 
 That should do it.
 
