@@ -136,7 +136,7 @@ header =
 footer :: HSP XML
 footer = 
   <div id="footer">
-    <a href="git://">clone-papps</a>
+    <a href="http://github.com/teneighty/Papps/">git papps</a>
   </div>
 
 langSelect :: String -> HSP XML
