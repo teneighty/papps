@@ -30,7 +30,7 @@ Executable papps
                      , happstack-data >= 0.3.2
                      , containers >= 0.2.0.0 && < 0.3.0.0
                      , pretty >= 1.0.1.0 && < 2 
-                     , HTTP >= 4000.0.0 && < 4000.0.8
+                     , HTTP 
                      , happstack-server >= 0.3 && < 0.4
                      , xhtml >= 3000.2.0.1
                      , highlighting-kate >= 0.2.4
