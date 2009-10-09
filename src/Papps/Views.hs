@@ -113,7 +113,9 @@ renderComment c =
       <% (dateStr . commentCreatedDate) c %>
     </div>
     <div class="code-block">
-      <% commentComment c %>
+      <pre>
+        <% commentComment c %>
+      </pre>
     </div>
   </div>
 
