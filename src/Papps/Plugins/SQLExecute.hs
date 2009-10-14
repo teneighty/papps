@@ -3,6 +3,7 @@ module Papps.Plugins.SQLExecute (
   )
   where
 
+#ifdef sql-execute
 import Database.HDBC
 import Database.HDBC.MySQL
 
@@ -36,3 +37,9 @@ formatSql cols res  = do
         f (SqlNull     ) = ""
         f t              = show t 
 
+#else
+
+sqlResults :: String -> IO String
+sqlResults sql = ""
+
+#endif

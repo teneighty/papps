@@ -42,10 +42,11 @@ Executable papps
                      , old-time >= 1.0.0.2
                      , old-locale >= 1.0.0.1
                      , random >= 1.0.0.1
-                     , HDBC, HDBC-mysql
+                     
     if flag(base4)
       Build-Depends: base >=4 && <5, syb
 
     if flag(sql-execute)
+      Build-Depends: base >=4 && <5, syb, HDBC, HDBC-mysql
       Other-Modules: Papps.Plugins.SQLExecute
 

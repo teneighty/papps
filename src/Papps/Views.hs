@@ -1,7 +1,6 @@
 {-# OPTIONS_GHC -F -pgmFtrhsx #-}
 module Papps.Views where
 
-import Control.Monad.Trans
 import HSP
 import Happstack.Server
 import Happstack.Server.HSP.HTML
@@ -11,7 +10,6 @@ import System.Locale
 import System.Time 
 
 import Papps.State
-import Papps.Plugins.SQLExecute (sqlResults)
 
 linesToHtml :: String -> [SourceLine] -> String
 linesToHtml vlang lns = 
