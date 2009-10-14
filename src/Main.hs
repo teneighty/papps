@@ -12,6 +12,7 @@ import System.Exit
 
 import Papps.Controller
 import Papps.State
+import Papps.Types
 import Paths_Papps
 
 main :: IO ()
@@ -25,7 +26,7 @@ main = do
   styleDir <- getDataFileName $ "web" </> "styles"
   control <- startSystemState stateProxy
   httpTid <- 
-    forkIO $ simpleHTTP (nullConf { port = (configPort conf ) }) 
+    forkIO $ simpleHTTP (nullConf { port = (configPort conf) }) 
                 $ controller styleDir
 
   waitForTermination
@@ -33,15 +34,6 @@ main = do
   killThread httpTid
   createCheckpoint control
   shutdownSystem control 
-
-data Config = Config {
-    configPort :: Int
-  }
-
-defaultConfig :: Config
-defaultConfig = Config {
-    configPort = 5050
-  }
 
 data Opts = Help
           | Version

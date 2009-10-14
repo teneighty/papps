@@ -1,6 +1,7 @@
 {-# OPTIONS_GHC -F -pgmFtrhsx #-}
 module Papps.Views where
 
+import Control.Monad.Trans
 import HSP
 import Happstack.Server
 import Happstack.Server.HSP.HTML
@@ -10,6 +11,7 @@ import System.Locale
 import System.Time 
 
 import Papps.State
+import Papps.Plugins.SQLExecute (sqlResults)
 
 linesToHtml :: String -> [SourceLine] -> String
 linesToHtml vlang lns = 
@@ -43,7 +45,7 @@ homeView selval pe =
         ta t = <textarea name="code" class="element-style"  rows="15" cols="70"><% t %></textarea>
 
 pasteView :: PasteEntry -> ServerPartT IO Response
-pasteView f = 
+pasteView f = do
   ret $
     <div>
       <div class="block">

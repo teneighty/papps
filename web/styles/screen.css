@@ -31,6 +31,11 @@ ul#menu li#memo { font-size: 8pt; vertical-align: bottom; }
   { border: #CCC solid 1px; background-color: #EEE; margin: 5px; padding: 5px; }
 .code-block
   { border: #CCC solid 1px; background-color: #FFF; margin: 5px; padding: 5px; }
+.results-block
+  { border: #CCC solid 1px; background-color: #EEE; margin: 5px; padding: 5px; }
+.results-block pre
+  { border: #CCC solid 1px; background-color: #FFF; margin: 5px; padding: 5px; }
+
 
 .date-submit { color: #333; font-size: 8pt; }
 a.simple-link       { color: #333; font-size: 8pt; margin: 0 5px; }

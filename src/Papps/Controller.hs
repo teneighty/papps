@@ -1,7 +1,7 @@
 module Papps.Controller where
 
 import Control.Monad.Reader
-import Data.List (find)
+import Data.List (find, sortBy)
 import Happstack.Server
 import Happstack.State
 import System.FilePath
@@ -96,9 +96,13 @@ generateURL = liftM format (randomIO :: IO Integer)
   where format = (show . abs)
 
 recent :: ServerPartT IO Response
-recent = 
-  do pastes  <- query ReadPastes
-     recentView $ take 20 pastes
+recent = do
+     pastes  <- query ReadPastes
+     recentView $ take 20 $ reverse $ sortBy s pastes
+  where s a b = if pasteCreatedDate a < pasteCreatedDate b 
+                  then LT
+                  else GT
+    
 
 langCookieName :: String
 langCookieName = "lang"

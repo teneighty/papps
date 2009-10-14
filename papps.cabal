@@ -14,12 +14,16 @@ data-files:
     web/styles/*.css
 
 Flag base4
-    Description: Choose the even newer, even smaller, split-up base package.
+  Description: Choose the even newer, even smaller, split-up base package.
+
+Flag sql-execute
+  default: False
 
 Executable papps
     Main-is:        Main.hs
     hs-source-dirs: src
-    Other-Modules:  Papps.Controller, Papps.State, Papps.Views, Papps.Utils, Paths_Papps
+    Other-Modules:    Papps.Controller, Papps.State, Papps.Views
+                    , Papps.Utils, Papps.Types, Paths_Papps
     ghc-options:    -Wall -O2
     Build-Depends:   base
                      , mtl >= 1.1.0.0 && < 2.0.0.0 
@@ -38,5 +42,10 @@ Executable papps
                      , old-time >= 1.0.0.2
                      , old-locale >= 1.0.0.1
                      , random >= 1.0.0.1
+                     , HDBC, HDBC-mysql
     if flag(base4)
       Build-Depends: base >=4 && <5, syb
+
+    if flag(sql-execute)
+      Other-Modules: Papps.Plugins.SQLExecute
+
